@@ -65,3 +65,36 @@ button {
   font-size: 2rem;
   color: #ff6f61;
 }
+/* Existing CSS code */
+body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ... (rest of your existing CSS) ... */
+
+/* Add the floating hearts animation here */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  color: #ff6f61;
+  animation: float 3s infinite;
+}
+
+.heart1 { top: 10%; left: 20%; }
+.heart2 { top: 30%; left: 50%; }
+.heart3 { top: 50%; left: 80%; }
