@@ -21,17 +21,5 @@ yesButton.addEventListener('click', () => {
   h1.style.opacity = '0';
   p.style.opacity = '0';
 
-  // Show the response message with a fade-in effect after 1 second
+  // Now remove the 'hidden' class after the fade out (1s delay)
   setTimeout(() => {
-    response.classList.remove('hidden');
-    response.style.opacity = '1';  // Make the response visible
-    document.body.style.background = 'linear-gradient(135deg, #ff6f61, #ffcccb)'; // Change the background color
-  }, 1000);  // Wait 1 second for the fade-out effect
-});
-
-// When mouse hovers over "No", it moves randomly
-noButton.addEventListener('mouseover', () => {
-  const randomX = Math.random() * 200 - 100;
-  const randomY = Math.random() * 200 - 100;
-  noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
-});
