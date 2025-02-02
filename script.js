@@ -10,26 +10,23 @@ yesButton.addEventListener('click', () => {
   const h1 = document.querySelector('h1');
   const p = document.querySelector('p');
 
-  // Apply fade-out transition for all elements
+  // Fade out all elements
   container.style.transition = "opacity 1s ease-out";
   buttons.style.transition = "opacity 1s ease-out";
   h1.style.transition = "opacity 1s ease-out";
   p.style.transition = "opacity 1s ease-out";
 
-  // Fade out all elements
   container.style.opacity = '0';
   buttons.style.opacity = '0';
   h1.style.opacity = '0';
   p.style.opacity = '0';
 
-  // Show the response message with a fade-in effect
+  // Show the response message with a fade-in effect after 1 second
   setTimeout(() => {
     response.classList.remove('hidden');
-    response.style.opacity = '1';  // Fade in the response message
-
-    // Change the background to a vibrant gradient
-    document.body.style.background = 'linear-gradient(135deg, #ff6f61, #ffcccb)';
-  }, 1000);  // Delay to let the fade-out happen first
+    response.style.opacity = '1';  // Make the response visible
+    document.body.style.background = 'linear-gradient(135deg, #ff6f61, #ffcccb)'; // Change the background color
+  }, 1000);  // Wait 1 second for the fade-out effect
 });
 
 // When mouse hovers over "No", it moves randomly
@@ -38,4 +35,3 @@ noButton.addEventListener('mouseover', () => {
   const randomY = Math.random() * 200 - 100;
   noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
 });
-
