@@ -51,11 +51,6 @@ button {
   color: #fff;
 }
 
-#noButton:hover {
-  transform: translateX(calc(100px - var(--random)));
-  position: absolute;
-}
-
 .hidden {
   display: none;
 }
