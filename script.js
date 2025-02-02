@@ -1,36 +1,35 @@
 const yesButton = document.getElementById('yesButton');
 const noButton = document.getElementById('noButton');
 const response = document.getElementById('response');
-const body = document.body;
-
-// Laser effect function
-function createLaser() {
-  const laser = document.createElement('div');
-  laser.classList.add('laser');
-  body.appendChild(laser);
-
-  setTimeout(() => {
-    laser.remove();
-  }, 500); // Laser duration
-}
 
 // When "Yes" is clicked
 yesButton.addEventListener('click', () => {
-  // Fade out all elements except the response message
-  document.querySelector('.container').style.opacity = '0';
-  document.querySelector('.buttons').style.opacity = '0';
-  document.querySelector('h1').style.opacity = '0';
-  document.querySelector('p').style.opacity = '0';
+  // Fade out all elements except for the response message
+  const container = document.querySelector('.container');
+  const buttons = document.querySelector('.buttons');
+  const h1 = document.querySelector('h1');
+  const p = document.querySelector('p');
 
-  // Show the response message and highlight it
-  response.classList.remove('hidden');
-  response.style.opacity = '1';
-  
-  // Change the background to a vibrant gradient
-  document.body.style.background = 'linear-gradient(135deg, #ff6f61, #ffcccb)';
-  
-  // Create laser animation
-  createLaser();
+  // Apply fade out transition
+  container.style.transition = "opacity 1s ease-out";
+  buttons.style.transition = "opacity 1s ease-out";
+  h1.style.transition = "opacity 1s ease-out";
+  p.style.transition = "opacity 1s ease-out";
+
+  // Fade out all elements
+  container.style.opacity = '0';
+  buttons.style.opacity = '0';
+  h1.style.opacity = '0';
+  p.style.opacity = '0';
+
+  // Fade in the response message
+  setTimeout(() => {
+    response.classList.remove('hidden');
+    response.style.opacity = '1';  // Make the response visible with fade-in effect
+
+    // Change the background to a vibrant gradient
+    document.body.style.background = 'linear-gradient(135deg, #ff6f61, #ffcccb)';
+  }, 1000);  // Delay to let the fading out happen first
 });
 
 // When mouse hovers over "No", it moves around randomly
