@@ -76,34 +76,16 @@ button {
   font-size: 2rem;
   color: #ff6f61;
   font-weight: bold;
-  z-index: 20; /* Ensure the message is on top */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease-in-out; /* Smooth fade-in transition */
+  z-index: 15; /* Ensure this is above other elements */
 }
 
 .hidden {
   display: none;
 }
 
-/* Laser animation */
-@keyframes laser {
-  0% { transform: scaleX(0); opacity: 0; }
-  50% { transform: scaleX(1.5); opacity: 1; }
-  100% { transform: scaleX(0); opacity: 0; }
-}
-
-.laser {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 4px;
-  background: linear-gradient(90deg, #ff6f61, #ff4e41);
-  opacity: 0;
-  z-index: 15;
-  transform: translate(-50%, -50%);
-  animation: laser 0.5s ease-in-out forwards;
-}
-
-/* Floating hearts */
+/* Floating hearts animation */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
@@ -133,7 +115,6 @@ button {
   font-size: 3rem;
   animation: floatBalloon 10s infinite ease-in;
   user-select: none;
-  animation-duration: calc(10s + random() * 5s); /* Random duration for each balloon */
 }
 
 .balloon1 { top: 80%; left: 25%; animation-duration: 12s; }
